@@ -1,0 +1,13 @@
+package com.java_intermediate.integrator;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class IntegratorApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

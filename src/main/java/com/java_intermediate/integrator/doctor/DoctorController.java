@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@RequestMapping(path = "api/v1/vets")
+@RequestMapping(path = "api/v1/doctors")
 @Controller
 
 public class DoctorController {
@@ -36,7 +36,7 @@ public class DoctorController {
         return this.doctorService.deleteDoctor(doctorId);
     }
 
-    @PutMapping(path = "pet/{doctorId, pet}")
+    @PutMapping(path = "pet/{doctorId}?{pet}")
     public ResponseEntity<Object> addDoctorPet(@PathVariable("doctorId") Long doctorId, @PathVariable("pet") Pet pet){
         return this.doctorService.addPet(doctorId, pet);
     }

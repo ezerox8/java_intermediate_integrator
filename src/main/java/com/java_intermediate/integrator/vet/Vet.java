@@ -17,8 +17,14 @@ public class Vet {
     @Column(unique = true)
     private String address;
 
+
+    @OneToMany
+    @JoinColumn(name ="doctors", referencedColumnName ="id")
     private List<Doctor> doctors;
 
+
+    @OneToMany
+    @JoinColumn(name ="pets", referencedColumnName ="id")
     private List<Pet> pets;
 
     private boolean status;

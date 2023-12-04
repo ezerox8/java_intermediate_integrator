@@ -7,22 +7,22 @@ import jakarta.persistence.*;
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    private String breed;
+    protected String breed;
 
-    private int age;
+    protected int age;
 
-    private String symptoms;
+    protected String symptoms;
 
-    private boolean firstConsultation;
+    protected boolean firstConsultation;
 
     @Column(unique = true)
-    private String fullName;
+    protected String fullName;
 
-    private String vet;
+    protected String vet;
 
-    private String doctor;
+    protected String doctor;
 
     public Pet() {
     }

@@ -15,6 +15,8 @@ public class Doctor {
     @Column(unique = true)
     private String name;
 
+    @OneToMany
+    @JoinColumn(name ="pets", referencedColumnName ="id")
     private List<Pet> pets;
 
     private boolean status;

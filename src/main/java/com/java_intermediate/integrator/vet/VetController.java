@@ -37,12 +37,12 @@ public class VetController {
         return this.vetService.deleteVet(vetId);
     }
 
-    @PutMapping(path = "doctors/{vetId, doctorsList}")
+    @PutMapping(path = "/doctors/{vetId}?{doctorsList}")
     public ResponseEntity<Object> addVetDoctors(@PathVariable("vetId") Long vetId, @PathVariable("doctorsList") List<Doctor> doctorsList){
         return this.vetService.addDoctors(vetId, doctorsList);
     }
 
-    @PutMapping(path = "pet/{vetId, pet}")
+    @PutMapping(path = "/pet/{vetId}?{pet}")
     public ResponseEntity<Object> addVetPet(@PathVariable("vetId") Long vetId, @PathVariable("pet") Pet pet){
         return this.vetService.addPet(vetId, pet);
     }

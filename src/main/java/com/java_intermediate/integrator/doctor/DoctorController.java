@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "api/v1/doctors")
 @Controller
-
+@CrossOrigin(origins = "http://localhost:4200")
 public class DoctorController {
     private final DoctorService doctorService;
 

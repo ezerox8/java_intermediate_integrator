@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "api/v1/vets")
 @Controller
+@CrossOrigin(origins = "http://localhost:4200")
 public class VetController {
     private final VetService vetService;
 

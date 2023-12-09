@@ -56,9 +56,9 @@ public class VetService {
     public ResponseEntity<Object> newVet(Vet vet){
         Optional<Vet> response = this.vetRepository.findVetByAddress(vet.getAddress());
         this.map = new HashMap<>();
-        if (response.isPresent() && vet.getId() != null){
-            String message = vet.getId() != null? "Veterinaria creada exitosamente": "Veterinaria modificada exitosamente";
-            HttpStatus status = vet.getId() != null? HttpStatus.CREATED: HttpStatus.ACCEPTED;
+        if (response.isEmpty() && vet.getId() == null){
+            String message = vet.getId() == null? "Veterinaria creada exitosamente": "Veterinaria modificada exitosamente";
+            HttpStatus status = vet.getId() == null? HttpStatus.CREATED: HttpStatus.ACCEPTED;
             map.put("status", 200);
             map.put("message", message);
             map.put("response", vet);

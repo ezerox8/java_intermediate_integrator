@@ -56,9 +56,9 @@ public class DoctorService {
     public ResponseEntity<Object> newDoctor(Doctor doctor){
         Optional<Doctor> response = this.doctorRepository.findVetByName(doctor.getName());
         this.map = new HashMap<>();
-        if (response.isPresent() && doctor.getId() != null){
-            String message = doctor.getId() != null? "Doctor dado de alta exitosamente": "Datos del doctor modificados exitosamente";
-            HttpStatus status = doctor.getId() != null? HttpStatus.CREATED: HttpStatus.ACCEPTED;
+        if (response.isPresent() && doctor.getId() == null){
+            String message = doctor.getId() == null? "Doctor dado de alta exitosamente": "Datos del doctor modificados exitosamente";
+            HttpStatus status = doctor.getId() == null? HttpStatus.CREATED: HttpStatus.ACCEPTED;
             map.put("status", 200);
             map.put("message", message);
             map.put("response", doctor);
